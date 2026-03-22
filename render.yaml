@@ -1,9 +1,10 @@
-# Render Blueprint – optional. You can also set Health Check Path in the dashboard.
-# Health check path: /health (set in Dashboard → Service → Health Check Path if not using Blueprint)
 services:
   - type: web
-    name: staff
+    name: jolah
     env: node
+    plan: free
     buildCommand: npm install
     startCommand: npm start
-    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
